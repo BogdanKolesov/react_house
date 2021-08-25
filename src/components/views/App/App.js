@@ -1,10 +1,20 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+import { GlobalTheme, DarkBlueTheme, BlueTheme, DarkYellowTheme, GreenTheme } from '../../themes';
 
+
+const Test = styled.div`
+    background-color:  ${props => props.theme.colors.primary};
+    width: 100px;
+    height: 100px;
+`;
 
 function App() {
     return (
-        <div>App</div>
+        <ThemeProvider theme={DarkBlueTheme}>
+            <GlobalTheme />
+            <Test />
+        </ThemeProvider>
     );
 }
 
