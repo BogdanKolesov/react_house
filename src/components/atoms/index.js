@@ -4,7 +4,7 @@ import { Container } from './Container';
 import { Wrapper } from './Wrapper';
 import { Icon } from './Icon';
 import { Input } from './Input';
-import { Range } from './Range';
+import { RangeSlider } from './Range';
 import { RangeActionBackground } from './RangeActionBackground';
 
 export {
@@ -14,6 +14,6 @@ export {
     Wrapper,
     Icon,
     Input,
-    Range,
+    RangeSlider,
     RangeActionBackground
 }

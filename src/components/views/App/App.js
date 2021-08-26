@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalTheme, DarkBlueTheme, BlueTheme, DarkYellowTheme, GreenTheme } from '../../themes';
-import { Range } from '../../atoms/';
+import { RangeSlider } from '../../atoms/';
 
 
 const Test = styled.div`
@@ -15,7 +15,7 @@ function App() {
         <ThemeProvider theme={DarkBlueTheme}>
             <GlobalTheme />
             <Test />
-            <Range type='range' min="0" max="100" />
+            <RangeSlider />
         </ThemeProvider>
     );
 }
