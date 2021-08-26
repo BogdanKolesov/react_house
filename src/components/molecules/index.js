@@ -1,6 +1,10 @@
 import { RangeActionBlock } from './RangeActionBlock';
+import { ClockBlock } from './ClockBlock';
+import { DataBlock } from './DataBlock';
 
 
 export {
-    RangeActionBlock
+    RangeActionBlock,
+    ClockBlock,
+    DataBlock
 }
