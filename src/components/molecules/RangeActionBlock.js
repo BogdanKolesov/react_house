@@ -9,7 +9,7 @@ const RangeActionWrapper = styled.div`
     position: relative;
     width: ${({ big }) => big ? '400px' : '200px'};
     height: ${({ big }) => big ? '200px' : '100px'};
-    flex-direction: column;
+    /* flex-direction: column; */
 `;
 
 
@@ -24,7 +24,7 @@ export const RangeActionBlock = ({ content }) => {
                 <Wrapper>
                     {content}
                 </Wrapper>
-                {/* <RangeSlider /> */}
+                <RangeSlider />
             </RangeActionWrapper>
         </>
     );
