@@ -4,8 +4,9 @@ import { Container } from './Container';
 import { Wrapper } from './Wrapper';
 import { Icon } from './Icon';
 import { Input } from './Input';
-import { RangeSlider } from './Range';
-import { RangeActionBackground } from './RangeActionBackground';
+import { RangeSlider } from './RangeSlider';
+import { ActiveBackground } from './ActiveBackground';
+import { Time, CalendarDays } from './Clock';
 
 export {
     Block,
@@ -15,5 +16,7 @@ export {
     Icon,
     Input,
     RangeSlider,
-    RangeActionBackground
+    ActiveBackground,
+    Time,
+    CalendarDays
 }

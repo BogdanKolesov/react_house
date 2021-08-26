@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { Range } from 'react-range';
 
+
+
 export class RangeSlider extends React.Component {
-    state = { values: [50] };
+    state = { values: [0] };
     render() {
         return (
             <Range
