@@ -1,8 +1,9 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalTheme, DarkBlueTheme, BlueTheme, DarkYellowTheme, GreenTheme } from '../../themes';
-import { RangeSlider, Time, CalendarDays } from '../../atoms/';
-import { RangeActionBlock } from '../../molecules/';
+import { RangeSlider, Time, CalendarDays, Clock } from '../../atoms/';
+import { RangeActionBlock } from '../../molecules';
+
 
 
 
@@ -16,7 +17,8 @@ function App() {
     return (
         <ThemeProvider theme={DarkBlueTheme}>
             <GlobalTheme />
-            <RangeActionBlock content={Time} />
+            <RangeActionBlock content={<Clock />} />
+
         </ThemeProvider>
     );
 }

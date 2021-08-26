@@ -24,7 +24,7 @@ export const RangeActionBlock = ({ content }) => {
                 <Wrapper>
                     {content}
                 </Wrapper>
-                <RangeSlider />
+                {/* <RangeSlider /> */}
             </RangeActionWrapper>
         </>
     );

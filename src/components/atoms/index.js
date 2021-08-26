@@ -6,7 +6,7 @@ import { Icon } from './Icon';
 import { Input } from './Input';
 import { RangeSlider } from './RangeSlider';
 import { ActiveBackground } from './ActiveBackground';
-import { Time, CalendarDays } from './Clock';
+import { Clock } from './Clock';
 
 export {
     Block,
@@ -17,6 +17,5 @@ export {
     Input,
     RangeSlider,
     ActiveBackground,
-    Time,
-    CalendarDays
+    Clock
 }
