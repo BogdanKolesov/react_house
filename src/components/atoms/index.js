@@ -7,6 +7,7 @@ import { Input } from './Input';
 import { RangeSlider } from './RangeSlider';
 import { ActiveBackground } from './ActiveBackground';
 import { Clock } from './Clock';
+import { Group } from './Group';
 
 export {
     Block,
@@ -17,5 +18,6 @@ export {
     Input,
     RangeSlider,
     ActiveBackground,
-    Clock
+    Clock,
+    Group
 }

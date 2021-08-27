@@ -7,7 +7,7 @@ const ClockWrapper = styled.div`
     justify-content: center;
     align-items: center;
     background-color: blue;
-    width: 30%;
+    width: 90%;
     height: 20vh;
 `;
 

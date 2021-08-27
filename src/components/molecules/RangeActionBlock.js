@@ -8,15 +8,16 @@ const RangeActionWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     position: relative;
-    width: ${({ big }) => big ? '30%' : '20%'};
-    height: ${({ big }) => big ? '30vh' : '20vh'};
+    width: 45%;
+    height: auto;
+    margin: 5px;
     /* flex-direction: column; */
 `;
 
 
 const SliderBlock = styled.div`
     width: 20%;
-    height: 100%;
+
     background-color: yellow;
     z-index: 1;
     display: flex;

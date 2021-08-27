@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Group } from '../../atoms';
 import { ClockBlock, RangeActionBlock, DataBlock } from '../../molecules';
 
 
@@ -14,11 +15,19 @@ const FlexBlock = styled.div`
 const RoomOne = () => {
     return (
         <FlexBlock>
-            <ClockBlock />
-            <RangeActionBlock />
-            <RangeActionBlock />
-            <DataBlock content='20 oC' />
-            <DataBlock content='50%' />
+            <Group big>
+                <ClockBlock />
+                <DataBlock content='20 oC' />
+                <DataBlock content='50%' />
+            </Group>
+            <Group>
+                <RangeActionBlock />
+                <RangeActionBlock />
+                <RangeActionBlock />
+                <RangeActionBlock />
+            </Group>
+
+
         </FlexBlock>
     );
 };
