@@ -4,6 +4,7 @@ import { GlobalTheme, DarkBlueTheme, BlueTheme, DarkYellowTheme, GreenTheme } fr
 import RoomOne from '../RoomOne';
 import { RangeSlider, Time, CalendarDays, Clock } from '../../atoms/';
 import { RangeActionBlock } from '../../molecules';
+import Img from '../../../profile.jpg';
 
 
 
@@ -20,13 +21,27 @@ const AppWrapper = styled.div`
     align-items: center;
     width: 100%;
     height: 100vh;
+    
+    
+    
 `;
 
+const Background = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-image: url(${Img});
+    filter: blur(20px);
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+`;
 function App() {
     return (
         <ThemeProvider theme={DarkBlueTheme}>
             <GlobalTheme />
             <AppWrapper>
+                <Background />
                 <RoomOne />
             </AppWrapper>
 
