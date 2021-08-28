@@ -5,7 +5,7 @@ export const Group = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    width: ${({ big }) => big ? '30%' : '20%'};
+    width: ${({ big }) => big ? '40%' : '30%'};
     height: auto;
 `;
 

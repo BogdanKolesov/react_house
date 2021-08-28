@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Group } from '../../atoms';
-import { ClockBlock, RangeActionBlock, DataBlock } from '../../molecules';
+import { ClockBlock, RangeActionBlock, DataBlock, RoomSelect, CheckboxBlock } from '../../molecules';
 
 
 const FlexBlock = styled.div`
@@ -26,7 +26,15 @@ const RoomOne = () => {
                 <RangeActionBlock />
                 <RangeActionBlock />
             </Group>
-
+            <Group big>
+                <RoomSelect content={'Content'}></RoomSelect>
+            </Group>
+            <Group>
+                <CheckboxBlock />
+                <CheckboxBlock />
+                <CheckboxBlock />
+                <CheckboxBlock />
+            </Group>
 
         </FlexBlock>
     );

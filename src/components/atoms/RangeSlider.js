@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Range = styled.input`
@@ -11,8 +11,16 @@ const Range = styled.input`
 `
 
 export const RangeSlider = () => {
+    // const [value, setValue] = useState(0);
+
+    // const changeValue = () => {
+    //     setValue();
+    // };
+
     return (
-        <Range type="range" orient="vertical" min="0" max="1" step="any" />
+        <Range type="range" orient="vertical" min="0" max="100" step="0.01" />
+
+
     );
 };
 
