@@ -5,7 +5,7 @@ const DataWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: green;
+    background-color: ${props => props.theme.colors.accent};
     color: #fff;
     width: ${props => props.theme.sizes.blocks.big};
     height: 20vh;

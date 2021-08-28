@@ -6,7 +6,7 @@ const ClockWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blue;
+    background-color: ${props => props.theme.colors.primary};
     width: 90%;
     height: 20vh;
     margin-bottom: 10px;

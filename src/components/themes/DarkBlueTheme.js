@@ -1,9 +1,10 @@
 export const DarkBlueTheme = {
+    background: require('../../assets/images/themes/DarkBlueTheme/background.jpg').default,
     colors: {
-        primary: '#3F51B5',
+        primary: 'rgba(48, 63, 159, 0.5);',
         darkPrimary: '#303F9F',
-        lightPrimary: '#C5CAE9',
-        accent: '#4CAF50',
+        lightPrimary: 'rgba(197, 202, 233, 0.5);',
+        accent: 'rgba(76, 175, 80, 0.5);',
         text: '#FFFFFF',
         primaryText: '#212121',
         secondaryText: '#757575',

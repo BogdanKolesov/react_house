@@ -4,7 +4,6 @@ import { GlobalTheme, DarkBlueTheme, BlueTheme, DarkYellowTheme, GreenTheme } fr
 import RoomOne from '../RoomOne';
 import { RangeSlider, Time, CalendarDays, Clock } from '../../atoms/';
 import { RangeActionBlock } from '../../molecules';
-import Img from '../../../profile.jpg';
 
 
 
@@ -30,8 +29,9 @@ const Background = styled.div`
     position: absolute;
     width: 100%;
     height: 100vh;
-    background-image: url(${Img});
-    filter: blur(20px);
+    background-image: url(${props => props.theme.background});
+    background-size: 100vw;
+    /* filter: blur(2px); */
     bottom: 0;
     right: 0;
     z-index: -1;
@@ -50,3 +50,5 @@ function App() {
 }
 
 export default App;
+
+

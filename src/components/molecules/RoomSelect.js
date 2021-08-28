@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import React from 'react';
 
 const RoomWrapper = styled.div`
-    background-color: red;
+    background-color: ${props => props.theme.colors.lightPrimary};
     width: 90%;
     height: 200px;
     display: flex;

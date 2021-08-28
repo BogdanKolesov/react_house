@@ -8,11 +8,11 @@ const CheckboxWrapper = styled.div`
     text-align: center;
     width: ${props => props.theme.sizes.blocks.small};
     height: 200px;
-    background-color: aliceblue;
+    background-color: ${props => props.theme.colors.primary};
 `;
 
 const CheckboxItem = styled.div`
-    background-color: red;
+    background-color: ${props => props.theme.colors.text};
     width: 50px;
     height: 50px;
     font-size: ${props => props.theme.sizes.fonts.medium};

@@ -27,7 +27,7 @@ const RoomOne = () => {
                 <RangeActionBlock />
             </Group>
             <Group big>
-                <RoomSelect content={'Content'}></RoomSelect>
+                <RoomSelect content={'Rooms'}></RoomSelect>
             </Group>
             <Group>
                 <CheckboxBlock />

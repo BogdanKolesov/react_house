@@ -18,7 +18,7 @@ const RangeActionWrapper = styled.div`
 const SliderBlock = styled.div`
     width: 20%;
 
-    background-color: yellow;
+    background-color: ${props => props.theme.colors.lightPrimary};
     z-index: 1;
     display: flex;
     justify-content: center;
