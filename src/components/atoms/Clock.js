@@ -9,13 +9,13 @@ const ClockBlock = styled.div`
 `;
 
 const ClockHours = styled.p`
-    font-size: 22px;
+    font-size: ${props => props.theme.sizes.fonts.big};
     margin-bottom: 5px;
     color: ${props => props.theme.colors.text};
 `;
 
 const ClockDate = styled.p`
-    font-size: 14px;
+    font-size: ${props => props.theme.sizes.fonts.small};
     width: 100%;
     text-align: right;
     color: ${props => props.theme.colors.text};

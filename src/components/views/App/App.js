@@ -14,11 +14,21 @@ import { RangeActionBlock } from '../../molecules';
 //     height: 100px;
 // `;
 
+const AppWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+`;
+
 function App() {
     return (
         <ThemeProvider theme={DarkBlueTheme}>
             <GlobalTheme />
-            <RoomOne />
+            <AppWrapper>
+                <RoomOne />
+            </AppWrapper>
 
         </ThemeProvider>
     );

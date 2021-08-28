@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import { ActiveBackground, RangeSlider, Wrapper } from '../atoms';
-import { FaRegLightbulb } from "react-icons/fa";
+import { FaLightbulb, FaRegLightbulb } from "react-icons/fa";
 
 const RangeActionWrapper = styled.div`
     display: flex;
@@ -41,7 +41,7 @@ export const RangeActionBlock = () => {
             <RangeActionWrapper>
                 <ActiveBackground />
                 <ContentBlock>
-                    <FaRegLightbulb />
+                    {RangeSlider.value = 0 ? <FaLightbulb /> : <FaRegLightbulb />}
                 </ContentBlock>
                 <SliderBlock>
                     <RangeSlider />

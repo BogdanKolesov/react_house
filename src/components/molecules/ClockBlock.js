@@ -9,6 +9,7 @@ const ClockWrapper = styled.div`
     background-color: blue;
     width: 90%;
     height: 20vh;
+    margin-bottom: 10px;
 `;
 
 export const ClockBlock = () => {

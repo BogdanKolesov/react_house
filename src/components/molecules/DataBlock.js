@@ -7,8 +7,9 @@ const DataWrapper = styled.div`
     align-items: center;
     background-color: green;
     color: #fff;
-    width: 40%;
+    width: ${props => props.theme.sizes.blocks.big};
     height: 20vh;
+    font-size: ${props => props.theme.sizes.fonts.medium};
 `;
 
 export const DataBlock = ({ content }) => {

@@ -6,7 +6,7 @@ const CheckboxWrapper = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 18%;
+    width: ${props => props.theme.sizes.blocks.small};
     height: 200px;
     background-color: aliceblue;
 `;
@@ -15,6 +15,7 @@ const CheckboxItem = styled.div`
     background-color: red;
     width: 50px;
     height: 50px;
+    font-size: ${props => props.theme.sizes.fonts.medium};
 `;
 
 export const CheckboxBlock = () => {

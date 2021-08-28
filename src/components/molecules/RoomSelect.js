@@ -10,6 +10,8 @@ const RoomWrapper = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: ${props => props.theme.sizes.fonts.big};
+    color: ${props => props.theme.colors.text};
 `;
 
 export const RoomSelect = ({ content }) => {

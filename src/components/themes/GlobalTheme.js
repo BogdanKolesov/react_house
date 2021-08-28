@@ -17,12 +17,6 @@ export const GlobalTheme = createGlobalStyle`
     }
     
 
-    media: {
-        phone: 'max-width: 479px';
-        tablet: 'max-width: 767px';
-        albumTablet: 'max-width: 991px';
-        
     }
 
-}
 `
