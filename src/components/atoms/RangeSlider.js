@@ -11,12 +11,12 @@ const Range = styled.input`
 export const RangeSlider = () => {
     const [value, setValue] = useState(0);
 
-    const changeValue = (value) => {
-        setValue();
-    };
+    const rangeValue = Range.value
+
+
 
     return (
-        <Range type="range" orient="vertical" min="0" max="100" step="0.01" />
+        <Range type="range" orient="vertical" min="0" max="100" step="0.01" onInput={() => console.log(rangeValue)} />
 
 
     );

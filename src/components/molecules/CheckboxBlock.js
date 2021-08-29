@@ -12,7 +12,7 @@ const CheckboxWrapper = styled.div`
 `;
 
 const CheckboxItem = styled.div`
-    background-color: ${props => props.theme.colors.text};
+    background-color: ${({ check }) => check ? 'red' : 'blue'}; //TODO! colors
     width: 50px;
     height: 50px;
     font-size: ${props => props.theme.sizes.fonts.medium};
@@ -23,13 +23,12 @@ export const CheckboxBlock = () => {
 
     const handleClick = () => {
         setCheck(!check);
-    };
 
-    check ? console.log('true') : console.log('false');
+    };
 
     return (
         <CheckboxWrapper>
-            <CheckboxItem onClick={() => handleClick()} />
+            <CheckboxItem check={check} onClick={() => handleClick()} />
         </CheckboxWrapper>
     );
 };
