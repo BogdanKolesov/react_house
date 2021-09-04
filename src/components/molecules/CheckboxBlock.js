@@ -7,8 +7,9 @@ const CheckboxWrapper = styled.div`
     align-items: center;
     text-align: center;
     width: ${props => props.theme.sizes.blocks.small};
-    height: 200px;
+    height: 100px;
     background-color: ${props => props.theme.colors.primary};
+    min-width: 100px;
 `;
 
 const CheckboxItem = styled.div`
@@ -16,6 +17,7 @@ const CheckboxItem = styled.div`
     width: 50px;
     height: 50px;
     font-size: ${props => props.theme.sizes.fonts.medium};
+    border-radius: 50%;
 `;
 
 export const CheckboxBlock = () => {

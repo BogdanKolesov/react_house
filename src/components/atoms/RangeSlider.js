@@ -13,13 +13,18 @@ export const RangeSlider = () => {
 
     const handleClick = (e) => {
         setValue(e.target.value);
-        console.log(value);
+        return value;
     };
 
 
+    const RangeValue = value;
+
 
     return (
-        <Range type="range" orient="vertical" min="0" max="100" step="0.01" value={value} onInput={handleClick} />
+
+        <>
+            {RangeValue}
+            <Range type="range" orient="vertical" min="0" max="100" step="1" value={value} onInput={handleClick} />
+        </>
     );
 };
-

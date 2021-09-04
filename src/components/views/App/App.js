@@ -4,7 +4,7 @@ import { GlobalTheme, DarkBlueTheme, BlueTheme, DarkYellowTheme, GreenTheme } fr
 import RoomOne from '../RoomOne';
 import { RangeSlider, Time, CalendarDays, Clock } from '../../atoms/';
 import { RangeActionBlock } from '../../molecules';
-
+import WeatherApi from '../../../services/WeatherApi';
 
 
 
@@ -19,10 +19,7 @@ const AppWrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
-    
-    
-    
+    height: 100vh;    
 `;
 
 const Background = styled.div`
@@ -44,7 +41,7 @@ function App() {
                 <Background />
                 <RoomOne />
             </AppWrapper>
-
+            {/* <WeatherApi /> */}
         </ThemeProvider>
     );
 }

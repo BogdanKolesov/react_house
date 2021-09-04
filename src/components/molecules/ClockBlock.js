@@ -8,7 +8,7 @@ const ClockWrapper = styled.div`
     align-items: center;
     background-color: ${props => props.theme.colors.primary};
     width: 90%;
-    height: 20vh;
+    height: 10vh;
     margin-bottom: 10px;
 `;
 

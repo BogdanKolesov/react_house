@@ -19,9 +19,9 @@ export const DarkBlueTheme = {
 
     sizes: {
         fonts: {
-            big: '50px',
-            medium: '40px',
-            small: '25px'
+            big: '30px',
+            medium: '20px',
+            small: '15px'
         },
 
         blocks: {

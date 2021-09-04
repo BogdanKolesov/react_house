@@ -2,13 +2,17 @@ import React, { useState } from 'react'
 import styled from 'styled-components';
 import { ActiveBackground, RangeSlider, Wrapper } from '../atoms';
 import { FaLightbulb, FaRegLightbulb } from "react-icons/fa";
+import { connect } from 'react-redux';
+import { valueChanged } from '../../actions/'
+
 
 const RangeActionWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    width: 45%;
+    width: 35%;
+    min-width: 150px;
     height: auto;
     margin: 5px;
     /* flex-direction: column; */
@@ -37,11 +41,13 @@ const ContentBlock = styled.div`
 
 export const RangeActionBlock = () => {
     return (
+
         <>
+
             <RangeActionWrapper>
                 <ActiveBackground />
                 <ContentBlock>
-                    {RangeSlider.value = 0 ? <FaLightbulb /> : <FaRegLightbulb />}
+                    {RangeSlider.RangeValue > 5 ? <FaLightbulb /> : <FaRegLightbulb />}
                 </ContentBlock>
                 <SliderBlock>
                     <RangeSlider />
@@ -51,3 +57,14 @@ export const RangeActionBlock = () => {
     );
 };
 
+const mapStateToProps = ({ items }) => {
+    return {
+        items
+    }
+}
+
+const mapDispathToProps = {
+    valueChanged
+};
+
+export default connect(mapStateToProps, mapDispathToProps)(RangeActionBlock);
