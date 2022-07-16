@@ -4,6 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 import GlobalTheme from "./themes/GlobalTheme";
+import { withNamespaces, NamespacesConsumer, Trans } from 'react-i18next';
 
 
 function App() {
