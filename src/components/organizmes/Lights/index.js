@@ -1,5 +1,2 @@
 import Lights from "./Lights";
-
-export {
-    Lights
-}
+export default Lights
