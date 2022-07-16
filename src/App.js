@@ -3,11 +3,13 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import GlobalTheme from "./themes/GlobalTheme";
 
 
 function App() {
   return (
     <BrowserRouter>
+      <GlobalTheme />
       <Routes>
         <Route path="/" element={<App />}>
           {/* <Route index element={<Home />} />
