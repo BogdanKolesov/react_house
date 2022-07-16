@@ -1,5 +1,5 @@
 import Home from "./Home/Home";
-import Settings from "./Home/Settings";
+import Settings from "./Settings";
 
 export {
     Home,
