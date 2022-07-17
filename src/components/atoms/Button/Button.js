@@ -1,11 +1,14 @@
 import React from 'react';
+import { StyledButton } from './Button.styles';
 
-const Button = () => {
+const Button = ({ variant, onClick, children }) => {
     return (
-        <div>
-
-        </div>
+        <StyledButton variant={variant} onClick={onClick}>
+            {children}
+        </StyledButton>
     );
 }
+
+
 
 export default Button;
