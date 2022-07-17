@@ -6,10 +6,6 @@ const Room = () => {
     const { id } = useParams();
     const [room, setRoom] = useState();
 
-
-
-
-
     useEffect(() => {
         const homeDataParsed = JSON.parse(homeData)
         const filtredData = homeDataParsed.find(data => data.id === id)
