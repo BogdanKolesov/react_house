@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import GlobalTheme from "./themes/GlobalTheme";
 import { withNamespaces, NamespacesConsumer, Trans } from 'react-i18next';
-import { Home } from './components/views'
+import { Home, Room, Settings, Error } from './components/views'
 
 
 function App() {
@@ -13,14 +13,10 @@ function App() {
     <BrowserRouter>
       <GlobalTheme />
       <Routes>
-        {/* <Route path="/" element={<App />}> */}
         <Route path="/" index element={<Home />} />
-        {/* <Route path="teams" element={<Teams />}>
-          <Route path=":teamId" element={<Team />} />
-          <Route path="new" element={<NewTeamForm />} />
-          <Route index element={<LeagueStandings />} />
-        </Route> */}
-        {/* </Route> */}
+        <Route path="/error" index element={<Error />} />
+        <Route path="/settings" index element={<Settings />} />
+        <Route path="/rooms/:roomId" element={<Room />} />
       </Routes>
     </BrowserRouter>
   );

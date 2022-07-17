@@ -1,11 +1,16 @@
 import React from 'react';
 import { homeData } from '../../../data';
 import { RoomPreview } from '../../molecules';
-import { HomeContainer, RoomsContainer } from './Home.styles';
+import { Clocks, Weather } from '../../organizmes'
+import { HomeContainer, OutsideContainer, RoomsContainer } from './Home.styles';
 
 const Home = () => {
     return (
         <HomeContainer>
+            <OutsideContainer>
+                <Weather />
+                <Clocks />
+            </OutsideContainer>
             <RoomsContainer>
                 {
                     homeData.map((data) => {

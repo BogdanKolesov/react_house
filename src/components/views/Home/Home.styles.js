@@ -13,3 +13,13 @@ export const RoomsContainer = styled.div`
     height: auto;
     flex-wrap: wrap;
 `
+
+export const OutsideContainer = styled.div`
+    display: flex: 
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 20px;
+`
