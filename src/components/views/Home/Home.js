@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { homeData } from '../../../data';
+import { Button } from '../../atoms';
 import { RoomPreview } from '../../molecules';
-import { Clocks, Weather } from '../../organizmes'
+import { AddRoomModal, Clocks, Weather } from '../../organizmes'
 import { HomeContainer, OutsideContainer, RoomsContainer } from './Home.styles';
 
 const Home = () => {
 
     const [rooms, setRooms] = useState([]);
+    const [modalVisible, setModalVisible] = useState(false);
 
     // useEffect(() => {
     //     fetch('https://jsonplaceholder.typicode.com/posts')
@@ -19,6 +21,7 @@ const Home = () => {
             <OutsideContainer>
                 <Weather />
                 <Clocks />
+                <Button onClick={() => setModalVisible(true)}>Add room</Button>
             </OutsideContainer>
             <RoomsContainer>
                 {
@@ -29,6 +32,7 @@ const Home = () => {
                     })
                 }
             </RoomsContainer>
+            <AddRoomModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
         </HomeContainer>
     );
 }
