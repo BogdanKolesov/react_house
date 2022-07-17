@@ -24,7 +24,7 @@ const Home = () => {
         }
         if (roomName !== null) {
             await setNewRoom((prev) => updatedRoom)
-            await setRooms((prev) => [...rooms, newRoom])
+            await setRooms((prev) => [...prev, newRoom])
             console.log('FUNK', newRoom)
             localStorage.setItem('rooms', JSON.stringify(rooms))
         }
@@ -32,6 +32,7 @@ const Home = () => {
 
     useEffect(() => {
         findRooms()
+
     }, []);
 
 

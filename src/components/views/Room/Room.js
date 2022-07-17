@@ -13,7 +13,6 @@ const Room = () => {
     }, [id]);
 
     useEffect(() => {
-
         const filtredData = rooms.find(data => data.id == id)
         console.log(filtredData);
         if (filtredData) {
