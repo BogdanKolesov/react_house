@@ -16,20 +16,11 @@ const Home = () => {
         roomName: 'test',
     });
 
-    useEffect(() => {
-        console.log("useEffect", newRoom);
-    }, [newRoom]);
-
-    // useEffect(() => {
-    //     fetch('https://jsonplaceholder.typicode.com/posts')
-    //         .then(res => res.json())
-    //         .then(data => setPosts(data))
-    // }, []);
     const addRoom = async (roomName, date) => {
 
         let updatedRoom = await {
             roomName,
-            date
+            id: date
         }
         if (roomName !== null) {
             await setNewRoom((prev) => updatedRoom)
@@ -39,6 +30,9 @@ const Home = () => {
         }
     }
 
+    useEffect(() => {
+        findRooms()
+    }, []);
 
 
     return (
