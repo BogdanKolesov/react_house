@@ -16,7 +16,7 @@ function App() {
         <Route path="/" index element={<Home />} />
         <Route path="/error" index element={<Error />} />
         <Route path="/settings" index element={<Settings />} />
-        <Route path="/rooms/:roomId" element={<Room />} />
+        <Route path="/rooms/:id" element={<Room />} />
       </Routes>
     </BrowserRouter>
   );

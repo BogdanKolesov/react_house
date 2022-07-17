@@ -1,47 +1,56 @@
-export const homeData = [
+const homeDataToJSON = [
     {
-        id: '141414hbvc',
+        id: '99796',
         roomName: 'Room 1',
         status: 'online',
         lights: [
             {
-                id: '14144gdsgs',
+                id: '683626',
                 name: 'Room 1 lighter',
                 resource: '#',
                 value: 15,
-                status: '',
-            }
+                status: 'online',
+            },
+            {
+                id: '68653626',
+                name: 'Room 1 lighter',
+                resource: '#',
+                value: 15,
+                status: 'offline',
+            },
         ],
         cameras: [
             {
-                id: '17456352gdfdad',
+                id: '1726527',
                 name: 'Camera room 1',
                 resource: '#',
-                status: '',
+                status: 'online',
             }
         ]
     },
     {
-        id: '15325hbvc',
+        id: '8583753',
         roomName: 'Room 2',
         status: 'online',
         lights: [
             {
-                id: '14144gdsgs',
+                id: '141462987dsgs',
                 name: 'Room 1 lighter',
                 resource: '#',
                 value: 15,
-                status: '',
+                status: 'online',
             }
         ],
         cameras: [
             {
-                id: '17456352gdfdad',
+                id: '1345654323636',
                 name: 'Camera room 1',
                 resource: '#',
-                status: '',
+                status: 'offline',
             }
         ]
     }
 
 ]
+
+export const homeData = JSON.stringify(homeDataToJSON)

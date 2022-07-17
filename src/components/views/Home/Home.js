@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { homeData } from '../../../data';
 import { RoomPreview } from '../../molecules';
 import { Clocks, Weather } from '../../organizmes'
 import { HomeContainer, OutsideContainer, RoomsContainer } from './Home.styles';
 
 const Home = () => {
+
+    const [rooms, setRooms] = useState([]);
+
+    // useEffect(() => {
+    //     fetch('https://jsonplaceholder.typicode.com/posts')
+    //         .then(res => res.json())
+    //         .then(data => setPosts(data))
+    // }, []);
+
     return (
         <HomeContainer>
             <OutsideContainer>
@@ -13,9 +22,9 @@ const Home = () => {
             </OutsideContainer>
             <RoomsContainer>
                 {
-                    homeData.map((data) => {
+                    JSON.parse(homeData).map((data, index) => {
                         return (
-                            <RoomPreview roomData={data} />
+                            <RoomPreview key={index} roomData={data} />
                         )
                     })
                 }

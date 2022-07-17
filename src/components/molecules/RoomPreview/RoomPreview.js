@@ -3,7 +3,7 @@ import { RoomInfo, RoomName, RoomPreviewContainer } from './RoomPreview.styles';
 
 const RoomPreview = ({ onClick, roomData }) => {
     return (
-        <RoomPreviewContainer onClick={onClick}>
+        <RoomPreviewContainer to={`/rooms/${roomData.id}`} onClick={onClick}>
             <RoomName>
                 {roomData.roomName}
             </RoomName>

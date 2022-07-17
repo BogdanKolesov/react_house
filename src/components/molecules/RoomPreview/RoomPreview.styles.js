@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'
 
-export const RoomPreviewContainer = styled.div`
+export const RoomPreviewContainer = styled(Link)`
     display: flex;
     flex-direction: column;
     padding: 10px;
