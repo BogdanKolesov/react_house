@@ -10,6 +10,7 @@ export const RoomPreviewContainer = styled(Link)`
     min-width: 120px;
     border: 1px solid black;
     cursor: pointer;
+    
 `
 
 export const RoomName = styled.h3`

@@ -5,10 +5,10 @@ const RoomPreview = ({ onClick, roomData }) => {
     return (
         <RoomPreviewContainer to={`/rooms/${roomData.id}`} onClick={onClick}>
             <RoomName>
-                {roomData.roomName}
+                {roomData.roomName !== null ? roomData.roomName : null}
             </RoomName>
             <RoomInfo>
-                STATUS: {roomData.status}
+                STATUS: {roomData.status !== null ? roomData.status : null}
             </RoomInfo>
         </RoomPreviewContainer>
     );

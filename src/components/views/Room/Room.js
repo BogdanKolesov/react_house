@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
-import { homeData } from '../../../data';
+import { useRooms } from '../../../contexts/RoomsProvider';
 
 const Room = () => {
     const { id } = useParams();
     const [room, setRoom] = useState();
+    const { rooms } = useRooms()
+
 
     useEffect(() => {
-        const homeDataParsed = JSON.parse(homeData)
-        const filtredData = homeDataParsed.find(data => data.id === id)
+        // const homeDataParsed = JSON.parse(homeData)
+        const filtredData = rooms.find(data => data.id === id)
+        console.log(rooms)
         if (filtredData !== null || undefined) {
             setRoom(filtredData)
         } else {
@@ -24,24 +27,24 @@ const Room = () => {
             <div>
                 {room.id}
                 {room.roomName}
-                {room.status}
+                {room.status ? room.status : null}
                 {
-                    room.lights.map((data) => {
+                    room.lights ? room.lights.map((data) => {
                         return (
                             <div key={data.id}>
                                 LIGHT: {data.id}, STATUS: {data.status}
                             </div>
                         )
-                    })
+                    }) : null
                 }
                 {
-                    room.cameras.map((data) => {
+                    room.cameras ? room.cameras.map((data) => {
                         return (
                             <div key={data.id}>
                                 CAMERA: {data.id}, STATUS: {data.status}
                             </div>
                         )
-                    })
+                    }) : null
                 }
             </div>
         )
