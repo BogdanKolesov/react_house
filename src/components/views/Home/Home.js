@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useId } from 'react';
 import { useRooms } from '../../../contexts/RoomsProvider';
 import { homeData } from '../../../data';
 import { Button } from '../../atoms';
@@ -16,24 +16,25 @@ const Home = () => {
         roomName: 'test',
     });
 
+    useEffect(() => {
+        console.log("useEffect", newRoom);
+    }, [newRoom]);
+
     // useEffect(() => {
     //     fetch('https://jsonplaceholder.typicode.com/posts')
     //         .then(res => res.json())
     //         .then(data => setPosts(data))
     // }, []);
-
     const addRoom = async (roomName, date) => {
-        if (roomName !== null) {
-            console.log(roomName)
-            await setNewRoom((prev) => (
-                {
-                    id: date,
-                    roomName: roomName
-                }
-            ))
-            console.log(newRoom)
-            setRooms((prev) => [...rooms, newRoom])
 
+        let updatedRoom = await {
+            roomName,
+            date
+        }
+        if (roomName !== null) {
+            await setNewRoom((prev) => updatedRoom)
+            await setRooms((prev) => [...rooms, newRoom])
+            console.log('FUNK', newRoom)
             localStorage.setItem('rooms', JSON.stringify(rooms))
         }
     }
@@ -48,6 +49,7 @@ const Home = () => {
                 <Button onClick={() => setModalVisible(true)}>Add room</Button>
             </OutsideContainer>
             <RoomsContainer>
+
                 {
                     rooms.map((data, index) => {
                         return (

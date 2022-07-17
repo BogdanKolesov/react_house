@@ -5,22 +5,23 @@ import { useRooms } from '../../../contexts/RoomsProvider';
 const Room = () => {
     const { id } = useParams();
     const [room, setRoom] = useState();
-    const { rooms } = useRooms()
-
+    const { rooms, findRooms } = useRooms()
 
     useEffect(() => {
-        // const homeDataParsed = JSON.parse(homeData)
-        const filtredData = rooms.find(data => data.id === id)
-        console.log(rooms)
-        if (filtredData !== null || undefined) {
-            setRoom(filtredData)
-        } else {
-            setRoom(null)
-        }
-        // console.log(filtredData.roomName)
+        findRooms()
+        console.log('ROOMS:', rooms)
     }, [id]);
 
-    useEffect(() => console.log(room), [room]);
+    useEffect(() => {
+
+        const filtredData = rooms.find(data => data.id == id)
+        console.log(filtredData);
+        if (filtredData) {
+            setRoom(filtredData)
+        }
+    }, []);
+
+    useEffect(() => { }, [room]);
 
     if (room) {
         return (
