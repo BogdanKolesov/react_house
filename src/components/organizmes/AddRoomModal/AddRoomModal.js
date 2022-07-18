@@ -26,7 +26,7 @@ const AddRoomModal = ({ modalVisible, setModalVisible, newRoomName, setNewRoomNa
             <AddRoomModalContent>
                 <h2>Add Room</h2>
                 <Input
-                    value={newRoomName}
+                    value={newRoomName || ''}
                     onChange={(event) => setNewRoomName((prev) => event.target.value)}
                     placeholder='Room name' />
                 <Button

@@ -16,7 +16,7 @@ const Room = () => {
         const filtredData = rooms.find(data => data.id == id)
         console.log(filtredData);
         if (filtredData) {
-            setRoom(filtredData)
+            setRoom(() => filtredData)
         }
     }, []);
 
