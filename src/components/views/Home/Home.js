@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useId } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useRooms } from '../../../contexts/RoomsProvider';
 import { homeData } from '../../../data';
 import { Button } from '../../atoms';
@@ -16,14 +16,15 @@ const Home = () => {
         roomName: 'test',
     });
 
+    const updatedRoomRef = useRef()
     const addRoom = async (roomName, date) => {
 
-        let updatedRoom = await {
+        updatedRoomRef.current = await {
             roomName,
             id: date
         }
         if (roomName !== null) {
-            await setNewRoom((prev) => updatedRoom)
+            await setNewRoom((prev) => updatedRoomRef.current)
             await setRooms((prev) => [...prev, newRoom])
             console.log('FUNK', newRoom)
             localStorage.setItem('rooms', JSON.stringify(rooms))
