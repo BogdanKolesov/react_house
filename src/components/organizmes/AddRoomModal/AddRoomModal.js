@@ -3,17 +3,17 @@ import { Button, Input } from '../../atoms';
 import { AddRoomModalContainer, AddRoomModalContent, CloseIcon } from './AddRoomModal.styles';
 import { GrClose } from 'react-icons/gr'
 
-const AddRoomModal = ({ modalVisible, setModalVisible, newRoomName, setNewRoomName, addRoom }) => {
-
+const AddRoomModal = ({ modalVisible, setModalVisible, newRoomName, setNewRoomName, addRoom, roomInputName, setRoomInputName }) => {
 
     const setRoom = async () => {
-        await addRoom(newRoomName, Date.now())
-        await setNewRoomName('')
+        await setNewRoomName(roomInputName)
+        await setRoomInputName('')
+        setModalVisible(false)
     }
 
     const handleCloseModal = () => {
-        setModalVisible(false)
-        setNewRoomName('')
+        setRoomInputName('')
+        setRoomInputName('')
     }
 
     useEffect(() => {
@@ -21,13 +21,15 @@ const AddRoomModal = ({ modalVisible, setModalVisible, newRoomName, setNewRoomNa
     }, [newRoomName]);
 
 
+
+
     return (
         <AddRoomModalContainer modalVisible={modalVisible}>
             <AddRoomModalContent>
                 <h2>Add Room</h2>
                 <Input
-                    value={newRoomName || ''}
-                    onChange={(event) => setNewRoomName((prev) => event.target.value)}
+                    value={roomInputName || ''}
+                    onChange={(event) => setRoomInputName((prev) => event.target.value)}
                     placeholder='Room name' />
                 <Button
                     onClick={setRoom}

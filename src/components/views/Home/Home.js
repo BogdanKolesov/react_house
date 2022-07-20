@@ -10,7 +10,9 @@ const Home = () => {
 
     const [modalVisible, setModalVisible] = useState(false);
     const { rooms, setRooms, findRooms } = useRooms()
+    // const [rooms, setRooms] = useState([]);
     const [newRoomName, setNewRoomName] = useState();
+    const [roomInputName, setRoomInputName] = useState();
     const [newRoom, setNewRoom] = useState({
         id: 'test',
         roomName: 'test',
@@ -24,18 +26,30 @@ const Home = () => {
             id: date
         }
         if (roomName !== null) {
-            await setNewRoom((prev) => updatedRoomRef.current)
-            await setRooms((prev) => [...prev, newRoom])
-            console.log('FUNK', newRoom)
-            localStorage.setItem('rooms', JSON.stringify(rooms))
+            await setNewRoom(updatedRoomRef.current)
+            console.log('NEW ROOM:', newRoom)
+            console.log('0:', rooms)
         }
     }
 
+    const updateRooms = () => {
+        setRooms((prev) => [...prev, newRoom])
+        localStorage.setItem('rooms', JSON.stringify(rooms))
+    }
+
+    useEffect(() => {
+        addRoom(newRoomName, Date.now())
+        console.log(newRoomName)
+        // findRooms()
+    }, [newRoomName]);
+
+    useEffect(() => {
+        updateRooms()
+    }, [newRoom]);
+
     useEffect(() => {
         findRooms()
-
     }, []);
-
 
     return (
         <HomeContainer>
@@ -61,6 +75,9 @@ const Home = () => {
                 newRoom={newRoom}
                 newRoomName={newRoomName}
                 setNewRoomName={setNewRoomName}
+                roomInputName={roomInputName}
+                setRoomInputName={setRoomInputName}
+
             />
         </HomeContainer>
     );

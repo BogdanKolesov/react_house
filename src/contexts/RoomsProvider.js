@@ -1,21 +1,25 @@
-import React, { useRef, createContext, useState, useEffect, useContext } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import { homeData } from '../data';
 
 const RoomsContext = createContext()
 
 
 const RoomsProvider = ({ children }) => {
-    const roomsRef = useRef()
     const [rooms, setRooms] = useState([]);
 
     const findRooms = async () => {
+        // const homeDataParsed = JSON.parse(homeData)
+        // console.log('PARSED', homeDataParsed)
         const result = await JSON.parse(localStorage.getItem('rooms'));
-        if (result) { setRooms(result) }
+        if (result) setRooms(result)
+        console.log('ROOMS FROM FIND ROOMS:', rooms)
+        console.log(rooms)
     }
 
     useEffect(() => {
         findRooms()
     }, []);
+
 
     return (
         <RoomsContext.Provider value={{ rooms, setRooms, findRooms }}>
