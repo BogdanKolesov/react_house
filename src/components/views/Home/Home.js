@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { getWeatherData } from '../../../api/weatherApi';
 import { useRooms } from '../../../contexts/RoomsProvider';
 import { homeData } from '../../../data';
 import { Button } from '../../atoms';
@@ -52,8 +53,11 @@ const Home = () => {
     }, [rooms]);
 
     useEffect(() => {
+        getWeatherData()
         findRooms()
     }, []);
+
+
 
     return (
         <HomeContainer>
@@ -62,6 +66,7 @@ const Home = () => {
                 <Clocks />
                 <Button onClick={() => setModalVisible(true)}>Add room</Button>
                 <Button onClick={() => setRooms([])}>Cleat storage (TEST)</Button>
+                <Button onClick={() => getWeatherData()}>GetWeather</Button>
             </OutsideContainer>
             <RoomsContainer>
 
