@@ -5,7 +5,7 @@ const RoomsContext = createContext()
 
 
 const RoomsProvider = ({ children }) => {
-    const [rooms, setRooms] = useState([]);
+    const [rooms, setRooms] = useState(JSON.parse(localStorage.getItem('rooms')) || []);
 
     const findRooms = async () => {
         // const homeDataParsed = JSON.parse(homeData)
@@ -17,8 +17,16 @@ const RoomsProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        findRooms()
+        const rooms = JSON.parse(localStorage.getItem('rooms'));
+        if (rooms) {
+            setRooms(rooms);
+        }
     }, []);
+
+    // useEffect(() => {
+    //     findRooms()
+    //     console.log('ROOMS FROM RP:', rooms)
+    // }, []);
 
 
     return (
@@ -31,3 +39,4 @@ export const useRooms = () => useContext(RoomsContext)
 
 
 export default RoomsProvider;
+

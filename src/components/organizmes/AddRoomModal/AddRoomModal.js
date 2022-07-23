@@ -6,7 +6,9 @@ import { GrClose } from 'react-icons/gr'
 const AddRoomModal = ({ modalVisible, setModalVisible, newRoomName, setNewRoomName, addRoom, roomInputName, setRoomInputName }) => {
 
     const setRoom = async () => {
-        await setNewRoomName(roomInputName)
+        if (roomInputName.trim().length !== 0) {
+            await setNewRoomName(roomInputName)
+        }
         await setRoomInputName('')
         setModalVisible(false)
     }
@@ -16,9 +18,7 @@ const AddRoomModal = ({ modalVisible, setModalVisible, newRoomName, setNewRoomNa
         setRoomInputName('')
     }
 
-    useEffect(() => {
 
-    }, [newRoomName]);
 
 
 

@@ -7,107 +7,86 @@ import { AddRoomModal, Clocks, Weather } from '../../organizmes'
 import { HomeContainer, OutsideContainer, RoomsContainer } from './Home.styles';
 
 const Home = () => {
-    const { execute, status, value, error } = useAsync(myFunction, false);
+
+    ///////////
+
+    const [modalVisible, setModalVisible] = useState(false);
+    const { rooms, setRooms, findRooms } = useRooms()
+    const [newRoomName, setNewRoomName] = useState();
+    const [roomInputName, setRoomInputName] = useState();
+    const [newRoom, setNewRoom] = useState();
+
+    const updatedRoomRef = useRef()
+    const addRoom = async (roomName, date) => {
+        if (updatedRoomRef.current !== null) {
+            updatedRoomRef.current = await {
+                roomName,
+                id: date
+            }
+        } else {
+            return null
+        }
+    }
+
+    const updateRooms = () => {
+        setRooms([...rooms, updatedRoomRef.current])
+        console.log('ROOMS:', rooms);
+    }
+
+    useEffect(() => {
+        if (newRoomName !== null) {
+            addRoom(newRoomName, Date.now())
+        }
+        console.log(newRoomName)
+        // findRooms()
+    }, [newRoomName]);
+
+    // useEffect(() => {
+    //     setNewRoom(() => updatedRoomRef.current)
+    // }, [updatedRoomRef.current]);
+
+    useEffect(() => {
+        updateRooms()
+    }, [updatedRoomRef.current]);
+
+    useEffect(() => {
+        localStorage.setItem('rooms', JSON.stringify(rooms))
+    }, [rooms]);
+
+    useEffect(() => {
+        // findRooms()
+    }, []);
 
     return (
-        <div>
-            {status === "idle" && <div>Start your journey by clicking a button</div>}
-            {status === "success" && <div>{value}</div>}
-            {status === "error" && <div>{error}</div>}
-            <button onClick={execute} disabled={status === "pending"}>
-                {status !== "pending" ? "Click me" : "Loading..."}
-            </button>
-        </div>
+        <HomeContainer>
+            <OutsideContainer>
+                <Weather />
+                <Clocks />
+                <Button onClick={() => setModalVisible(true)}>Add room</Button>
+            </OutsideContainer>
+            <RoomsContainer>
+
+                {
+                    rooms || rooms.length !== 0 ? rooms.map((data) => {
+                        return (
+                            <RoomPreview key={data.id} roomData={data} />
+                        )
+                    }) : 'No rooms'
+                }
+            </RoomsContainer>
+            <AddRoomModal
+                modalVisible={modalVisible}
+                setModalVisible={setModalVisible}
+                addRoom={addRoom}
+                newRoom={newRoom}
+                newRoomName={newRoomName}
+                setNewRoomName={setNewRoomName}
+                roomInputName={roomInputName}
+                setRoomInputName={setRoomInputName}
+
+            />
+        </HomeContainer>
     );
-}
-
-// An async function for testing our hook.
-// Will be successful 50% of the time.
-const myFunction = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const rnd = Math.random() * 10;
-            rnd <= 5
-                ? resolve("Submitted successfully 🙌")
-                : reject("Oh no there was an error 😞");
-        }, 2000);
-    });
-};
-///////////
-
-const [modalVisible, setModalVisible] = useState(false);
-const { rooms, setRooms, findRooms } = useRooms()
-// const [rooms, setRooms] = useState([]);
-const [newRoomName, setNewRoomName] = useState();
-const [roomInputName, setRoomInputName] = useState();
-const [newRoom, setNewRoom] = useState({
-    id: 'test',
-    roomName: 'test',
-});
-
-const updatedRoomRef = useRef()
-const addRoom = async (roomName, date) => {
-
-    updatedRoomRef.current = await {
-        roomName,
-        id: date
-    }
-    if (roomName !== null) {
-        await setNewRoom(updatedRoomRef.current)
-        console.log('NEW ROOM:', newRoom)
-        console.log('0:', rooms)
-    }
-}
-
-const updateRooms = () => {
-    setRooms((prev) => [...prev, newRoom])
-    localStorage.setItem('rooms', JSON.stringify(rooms))
-}
-
-useEffect(() => {
-    addRoom(newRoomName, Date.now())
-    console.log(newRoomName)
-    // findRooms()
-}, [newRoomName]);
-
-useEffect(() => {
-    updateRooms()
-}, [newRoom]);
-
-useEffect(() => {
-    findRooms()
-}, []);
-
-return (
-    <HomeContainer>
-        <OutsideContainer>
-            <Weather />
-            <Clocks />
-            <Button onClick={() => setModalVisible(true)}>Add room</Button>
-        </OutsideContainer>
-        <RoomsContainer>
-
-            {
-                rooms.map((data, index) => {
-                    return (
-                        <RoomPreview key={index} roomData={data} />
-                    )
-                })
-            }
-        </RoomsContainer>
-        <AddRoomModal
-            modalVisible={modalVisible}
-            setModalVisible={setModalVisible}
-            addRoom={addRoom}
-            newRoom={newRoom}
-            newRoomName={newRoomName}
-            setNewRoomName={setNewRoomName}
-            roomInputName={roomInputName}
-            setRoomInputName={setRoomInputName}
-
-        />
-    </HomeContainer>
-);
 }
 
 export default Home;
