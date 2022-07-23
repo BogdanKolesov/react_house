@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import { useRooms } from '../../../contexts/RoomsProvider';
+import { Button } from '../../atoms';
+import { EditRoomModal } from '../../organizmes';
 
 const Room = () => {
     const { id } = useParams();
     const [room, setRoom] = useState();
+    const [modalVisible, setModalVisible] = useState(false);
     const { rooms, findRooms } = useRooms()
 
     useEffect(() => {
@@ -12,8 +15,10 @@ const Room = () => {
         console.log('ROOMS:', rooms)
     }, [id]);
 
+
+
     useEffect(() => {
-        const filtredData = rooms.find(data => data.id == id)
+        let filtredData = rooms.find(data => data.id == id)
         console.log(filtredData);
         if (filtredData) {
             setRoom(() => filtredData)
@@ -47,6 +52,8 @@ const Room = () => {
                         )
                     }) : null
                 }
+                <EditRoomModal data={room} modalVisible={modalVisible} setModalVisible={setModalVisible} />
+                <Button onClick={() => setModalVisible(true)}>Edit room</Button>
             </div>
         )
     } else {

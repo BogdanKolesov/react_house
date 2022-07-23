@@ -28,8 +28,10 @@ const Home = () => {
     }
 
     const updateRooms = () => {
-        setRooms([...rooms, updatedRoomRef.current])
-        console.log('ROOMS:', rooms);
+        if (updatedRoomRef.current) {
+            setRooms([...rooms, updatedRoomRef.current].filter(item => item.roomName !== undefined || null || ''))
+            console.log('ROOMS:', rooms);
+        }
     }
 
     useEffect(() => {
