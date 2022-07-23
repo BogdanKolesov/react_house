@@ -18,14 +18,12 @@ const Home = () => {
 
     const updatedRoomRef = useRef()
     const addRoom = async (roomName, date) => {
-        if (updatedRoomRef.current !== null) {
-            updatedRoomRef.current = await {
-                roomName,
-                id: date
-            }
-        } else {
-            return null
+
+        updatedRoomRef.current = await {
+            roomName,
+            id: date
         }
+
     }
 
     const updateRooms = () => {
@@ -54,7 +52,7 @@ const Home = () => {
     }, [rooms]);
 
     useEffect(() => {
-        // findRooms()
+        findRooms()
     }, []);
 
     return (

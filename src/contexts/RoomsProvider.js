@@ -21,6 +21,7 @@ const RoomsProvider = ({ children }) => {
         if (rooms) {
             setRooms(rooms);
         }
+
     }, []);
 
     // useEffect(() => {

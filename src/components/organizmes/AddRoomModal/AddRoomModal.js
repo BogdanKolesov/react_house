@@ -16,6 +16,7 @@ const AddRoomModal = ({ modalVisible, setModalVisible, newRoomName, setNewRoomNa
     const handleCloseModal = () => {
         setRoomInputName('')
         setRoomInputName('')
+        setModalVisible(false)
     }
 
 
