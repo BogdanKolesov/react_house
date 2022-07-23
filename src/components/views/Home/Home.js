@@ -61,6 +61,7 @@ const Home = () => {
                 <Weather />
                 <Clocks />
                 <Button onClick={() => setModalVisible(true)}>Add room</Button>
+                <Button onClick={() => setRooms([])}>Cleat storage (TEST)</Button>
             </OutsideContainer>
             <RoomsContainer>
 

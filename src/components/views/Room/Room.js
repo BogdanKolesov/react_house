@@ -25,9 +25,10 @@ const Room = () => {
     if (room) {
         return (
             <div>
-                {room.id}
-                {room.roomName}
-                {room.status ? room.status : null}
+                ID: {room.id}
+                RoomName: {room.roomName}
+
+                Status: {room.status ? room.status : null}
                 {
                     room.lights ? room.lights.map((data) => {
                         return (
