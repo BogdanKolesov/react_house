@@ -22,11 +22,11 @@ export default function EditRoomModal({ data, modalVisible, setModalVisible }) {
             lights: [
                 {
                     id: Date.now() + 1,
-                    name: 'FIRST LIGHT',
+                    name: 'FIRST CAMERA',
                     resource: '#',
                     value: 15,
                     status: 'online',
-                }
+                },
             ]
         }
         setRooms([...result, newData])

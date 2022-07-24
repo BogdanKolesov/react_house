@@ -5,7 +5,7 @@ import { homeData, navData } from '../../../data';
 import { Button } from '../../atoms';
 import { RoomPreview } from '../../molecules';
 import { AddRoomModal, Clocks, Nav, Weather } from '../../organizmes'
-import { HomeContainer, OutsideContainer, RoomsContainer } from './Home.styles';
+import { ContentContainer, HomeContainer, OutsideContainer, RoomsContainer } from './Home.styles';
 
 const Home = () => {
 
@@ -76,17 +76,18 @@ const Home = () => {
                 <Button onClick={() => setRooms([])}>Cleat storage (TEST)</Button>
                 <Button onClick={() => getWeatherData()}>GetWeather</Button>
             </OutsideContainer>
-            <Nav data={navData} />
-            <RoomsContainer>
-
-                {
-                    rooms || rooms.length !== 0 ? rooms.map((data) => {
-                        return (
-                            <RoomPreview key={data.id} roomData={data} />
-                        )
-                    }) : 'No rooms'
-                }
-            </RoomsContainer>
+            <ContentContainer>
+                <Nav data={navData} />
+                <RoomsContainer>
+                    {
+                        rooms || rooms.length !== 0 ? rooms.map((data) => {
+                            return (
+                                <RoomPreview key={data.id} roomData={data} />
+                            )
+                        }) : 'No rooms'
+                    }
+                </RoomsContainer>
+            </ContentContainer>
             <AddRoomModal
                 modalVisible={modalVisible}
                 setModalVisible={setModalVisible}

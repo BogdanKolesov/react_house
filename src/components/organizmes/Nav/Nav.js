@@ -3,26 +3,24 @@ import { NavContainer, NavContent, NavContentItem, NavIcon, NavText } from './Na
 
 const Nav = ({ data }) => {
     return (
-        <>
+        <NavContainer>
             {
-                data.map((item) => {
+                data.map((item, index) => {
                     return (
-                        <NavContainer>
-                            <NavContent>
-                                <NavContentItem>
-                                    <NavIcon>
-                                        {item.icon}
-                                    </NavIcon>
-                                    <NavText>
-                                        {item.text}
-                                    </NavText>
-                                </NavContentItem>
-                            </NavContent>
-                        </NavContainer>
+                        <NavContent key={index}>
+                            <NavContentItem color={item.color}>
+                                <NavIcon>
+                                    {item.icon}
+                                </NavIcon>
+                                <NavText>
+                                    {item.text}
+                                </NavText>
+                            </NavContentItem>
+                        </NavContent>
                     )
                 })
             }
-        </>
+        </NavContainer>
     );
 }
 
