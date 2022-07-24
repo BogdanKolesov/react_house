@@ -25,7 +25,9 @@ const Room = () => {
         }
     }, []);
 
-    useEffect(() => { }, [room]);
+    useEffect(() => {
+        // console.log(room);
+    }, [room]);
 
     if (room) {
         return (
@@ -38,7 +40,7 @@ const Room = () => {
                     room.lights ? room.lights.map((data) => {
                         return (
                             <div key={data.id}>
-                                LIGHT: {data.id}, STATUS: {data.status}
+                                LIGHT: {data.name}, STATUS: {data.status}
                             </div>
                         )
                     }) : null

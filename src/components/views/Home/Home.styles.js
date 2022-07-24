@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLORS } from '../../../constants/colors';
 
 export const HomeContainer = styled.div`
     display: flex;
@@ -22,4 +23,5 @@ export const OutsideContainer = styled.div`
     align-items: center;
     flex-wrap: nowrap;
     padding: 20px;
+    background-color: ${COLORS.gray}
 `

@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { getWeatherData } from '../../../api/weatherApi';
 import { useRooms } from '../../../contexts/RoomsProvider';
-import { homeData } from '../../../data';
+import { homeData, navData } from '../../../data';
 import { Button } from '../../atoms';
 import { RoomPreview } from '../../molecules';
-import { AddRoomModal, Clocks, Weather } from '../../organizmes'
+import { AddRoomModal, Clocks, Nav, Weather } from '../../organizmes'
 import { HomeContainer, OutsideContainer, RoomsContainer } from './Home.styles';
 
 const Home = () => {
@@ -22,7 +22,13 @@ const Home = () => {
 
         updatedRoomRef.current = await {
             roomName,
-            id: date
+            id: date,
+            lights: [
+
+            ],
+            cameras: [
+
+            ]
         }
 
     }
@@ -70,6 +76,7 @@ const Home = () => {
                 <Button onClick={() => setRooms([])}>Cleat storage (TEST)</Button>
                 <Button onClick={() => getWeatherData()}>GetWeather</Button>
             </OutsideContainer>
+            <Nav data={navData} />
             <RoomsContainer>
 
                 {
