@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Error = () => {
+const WeatherPage = () => {
     return (
         <div>
-            ERROR
+            WEATHER
         </div>
     );
 }
 
-export default Error;
+export default WeatherPage;

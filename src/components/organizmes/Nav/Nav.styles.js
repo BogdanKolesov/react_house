@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { COLORS } from '../../../constants/colors';
 
@@ -6,7 +7,7 @@ export const NavContainer = styled.nav`
     left: 0;
     top: 0;
     max-width: 80px;
-    height: 89.5vh;
+    height: 94.5vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -17,7 +18,7 @@ export const NavContent = styled.div`
     width: 100%;
 `
 
-export const NavContentItem = styled.div`
+export const NavContentItem = styled(Link)`
     background-color: ${props => props.color};
     height: 100%;
     width: 100%;
@@ -33,10 +34,12 @@ export const NavContentItem = styled.div`
 
 export const NavIcon = styled.div`
     font-size: 50px;
+    color: ${COLORS.black};
 `
 
 export const NavText = styled.span`
     font-size: 20px;
     font-family: 'Roboto Thin';
     text-align: center;
+    color: ${COLORS.white};
 `

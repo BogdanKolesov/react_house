@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Error = () => {
+const LightsPage = () => {
     return (
         <div>
-            ERROR
+            LIGHTS
         </div>
     );
 }
 
-export default Error;
+export default LightsPage;

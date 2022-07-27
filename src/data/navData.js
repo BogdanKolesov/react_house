@@ -6,31 +6,31 @@ import { COLORS } from '../constants/colors'
 export const navData = [
     {
         text: 'Rooms',
-        link: '#',
+        link: 'rooms',
         icon: (<GiMushroomCloud />),
         color: COLORS.darkYellow
     },
     {
         text: 'Lights',
-        link: '#',
+        link: 'lights',
         icon: (<GiLighthouse />),
         color: COLORS.blue
     },
     {
         text: 'Cameras',
-        link: '#',
+        link: 'cameras',
         icon: (<GiCctvCamera />),
         color: COLORS.darkGreenTransparent
     },
     {
         text: 'Weather data',
-        link: '#',
+        link: 'weather',
         icon: (<FaTemperatureHigh />),
         color: COLORS.darkRedTransparent
     },
     {
         text: 'Settings',
-        link: '#',
+        link: 'settings',
         icon: (<GiSettingsKnobs />),
         color: COLORS.gray
     },

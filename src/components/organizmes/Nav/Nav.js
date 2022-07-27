@@ -8,7 +8,7 @@ const Nav = ({ data }) => {
                 data.map((item, index) => {
                     return (
                         <NavContent key={index}>
-                            <NavContentItem color={item.color}>
+                            <NavContentItem to={item.link} color={item.color}>
                                 <NavIcon>
                                     {item.icon}
                                 </NavIcon>

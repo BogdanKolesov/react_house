@@ -22,11 +22,11 @@ export const RoomsContainer = styled.div`
 export const OutsideContainer = styled.div`
     display: flex: 
     width: 100%;
-    height: 20vh
+    height: 5vh;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
-    padding: 20px;
+    padding: 10px;
     background-color: ${COLORS.gray}
 `
