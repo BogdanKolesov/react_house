@@ -1,4 +1,4 @@
-import Light from "./Lights";
+import Light from "./Light";
 import RoomPreview from "./RoomPreview";
 
 export {
