@@ -8,6 +8,7 @@ export const LightsCanteiner = styled.div`
     justify-content: center;
     align-items: center;
     transform: rotate(-90deg);
+    padding: 10px;
 `
 
 export const RangeSlider = styled.input`
