@@ -57,7 +57,7 @@ export const login = async (req, res) => {
         res.json({
             token,
             user,
-            message: 'Вы вошли в сиситему "Умный дом"'
+            message: `Вы вошли в сиситему "Умный дом"`
         })
     } catch (error) {
         res.json({ message: 'Ошибка при авторизации' })
@@ -67,8 +67,23 @@ export const login = async (req, res) => {
 //get profile
 export const getProfile = async (req, res) => {
     try {
-
+        const user = await User.findById(req.userId)
+        if (!user) {
+            return res.json({
+                message: 'Такого юзера не существует'
+            })
+        }
+        const token = jwt.sign({
+            id: user._id
+        },
+            process.env.JWT_SECRET,
+            { expiresIn: '30d' })
+        res.json({
+            user,
+            token
+        })
     } catch (error) {
+        res.json({ message: 'Нет доступа' })
 
     }
 }
